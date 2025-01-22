@@ -3,9 +3,9 @@ class CreatePosts < ActiveRecord::Migration[8.0]
     create_table :posts do |t|
       t.string :title
       t.text :body
-
-      t.timestamps
       t.belongs_to :user
+      t.has_many :comments
+      t.timestamps
     end
   end
 end
